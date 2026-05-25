@@ -1,8 +1,10 @@
 describe('OrangeHRM Login Tests', () => {
 
   beforeEach(() => {
-    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-    cy.get('img[alt="company-branding"]').should('be.visible');
+    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login', {
+      timeout: 10000
+    });
+    cy.contains('button', 'Login', { timeout: 8000 }).should('be.visible');
   });
 
   it('No Credentials', () => {
