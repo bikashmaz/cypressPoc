@@ -2,7 +2,7 @@ describe('OrangeHRM Login Tests', () => {
 
   beforeEach(() => {
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login', {
-      timeout: 10000
+      waitForPageLoad: 'networkidle'
     });
     cy.contains('button', 'Login', { timeout: 8000 }).should('be.visible');
   });
